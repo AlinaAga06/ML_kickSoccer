@@ -1,0 +1,12 @@
+
+How to load them later for predictions
+
+# Load the model
+loaded_model = joblib.load(model_filename)
+
+# Load the scaler
+loaded_scaler = joblib.load(scaler_filename)
+
+# Example: scale new data and predict
+X_new_scaled = loaded_scaler.transform(X_new)  # X_new is your new match data
+y_pred_new = loaded_model.predict(X_new_scaled)
